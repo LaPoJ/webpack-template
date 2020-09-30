@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "semi": "error"
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "html/html-extensions": [".html", ".vue"],
+    "html/indent": "+2"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  }
+}
