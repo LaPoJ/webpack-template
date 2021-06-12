@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/views/Index/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/views/Mine/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/views/Index/index.js":
-/*!**********************************!*\
-  !*** ./src/views/Index/index.js ***!
-  \**********************************/
+/***/ "./src/views/Mine/index.js":
+/*!*********************************!*\
+  !*** ./src/views/Mine/index.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var a = 1;\nconsole.log(a);\n\n//# sourceURL=webpack:///./src/views/Index/index.js?");
+eval("var a = 1;\nconsole.log(a);\n\n//# sourceURL=webpack:///./src/views/Mine/index.js?");
 
 /***/ })
 

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=development webpack --config config/webpack.config.js --mode development",
     "buildProd": "cross-env NODE_ENV=production webpack --config config/webpack.config.js --mode production",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --hot"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.js --mode development --hot"
   },
   "keywords": [
     "webpack",

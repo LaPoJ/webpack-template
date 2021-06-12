@@ -9,6 +9,7 @@ module.exports = {
       },
     ]
   },
+  devtool: 'none',
   devServer: {
     host: '127.0.0.1',
     port: '8081',

@@ -10,6 +10,7 @@ module.exports = {
       },
     ]
   },
+  devtool: 'inline-cheap-source-map',
   optimization: {
     minimize: true,
     minimizer: [

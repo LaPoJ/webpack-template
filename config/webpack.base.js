@@ -1,22 +1,39 @@
 const path = require("path");
-const NODE_ENV = process.env.NODE_ENV;
 const { CleanWebpackPlugin, } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const { buildEntry, buildEntryHtmlTemplate } = require('../plugins/webpackEntryPlugin.js');
 
-
-// eslint-disable-next-line no-console
-console.log("node_env", NODE_ENV);
 module.exports = {
   // mode: "none",
-  entry: {
-    index: path.resolve(__dirname, "../src/views/index.js"),
-  },
+  // entry: {
+  //   index: path.resolve(__dirname, "../src/views/index.js"),
+  // },
+
+  entry: buildEntry(),
 
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "./static/js/[name].js",
+  },
+
+  stats: {
+    all: false,
+    assets: true,
+    builtAt: true,
+    cached: true,
+    cachedAssets: true,
+    chunkOrigins: true,
+    entrypoints: true,
+    env: true,
+    errorDetails: true,
+    moduleTrace: true,
+    performance: true,
+    timings: true,
+    providedExports: true,
+    usedExports: true,
+    warnings: true
   },
 
   module: {
@@ -55,7 +72,7 @@ module.exports = {
           },
         ],
       },
-      
+
     ],
   },
   optimization: {
@@ -74,6 +91,7 @@ module.exports = {
       return assetFilename.endsWith(".js");
     },
   },
+
   resolve: {
     extensions: [".js", ".ejs", '.scss'],
     alias: {
@@ -87,16 +105,17 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'ejs打包模板',
-      template: path.resolve(__dirname, "../src/views/index.ejs"),
-      filename: '[neme].html',
-      inject: true,
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'ejs打包模板',
+    //   template: path.resolve(__dirname, "../src/views/index.ejs"),
+    //   filename: 'index.html',
+    //   inject: true,
+    //   minify: true,
+    // }),
+    ...buildEntryHtmlTemplate(),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].css',
       chunkFilename: 'static/css/common.css'
     })
   ],
-
 };
